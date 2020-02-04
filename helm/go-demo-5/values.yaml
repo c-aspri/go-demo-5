@@ -13,18 +13,18 @@ rbac:
   enabled: true
 resources:
   limits:
-   cpu: 15m
+   cpu: 50m
    memory: 15Mi
   requests:
-   cpu: 5m
-   memory: 5Mi
+   cpu: 50m
+   memory: 10Mi
 dbResources:
   limits:
     memory: 200Mi
     cpu: 100m
   requests:
     memory: 100Mi
-    cpu: 10m
+    cpu: 50m
 dbPersistence:
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
