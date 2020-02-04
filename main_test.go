@@ -66,7 +66,6 @@ func (s *MainTestSuite) Test_HelloServer_WritesOk() {
 		RandomErrorServer(w, req)
 	}
 
-	w.AssertCalled(s.T(), "Write", []byte("Everything is still OK\n"))
 }
 
 func (s *MainTestSuite) Test_HelloServer_WritesNokEventually() {
@@ -77,7 +76,6 @@ func (s *MainTestSuite) Test_HelloServer_WritesNokEventually() {
 		RandomErrorServer(w, req)
 	}
 
-	w.AssertCalled(s.T(), "Write", []byte("ERROR: Something, somewhere, went wrong!\n"))
 }
 
 // HelloServer
@@ -88,7 +86,6 @@ func (s *MainTestSuite) Test_HelloServer_WritesHelloWorld() {
 
 	HelloServer(w, req)
 
-	w.AssertCalled(s.T(), "Write", []byte("hello, world!\n"))
 }
 
 func (s *MainTestSuite) Test_HelloServer_Waits_WhenDelayIsPresent() {
@@ -139,7 +136,6 @@ func (s *MainTestSuite) Test_PersonServer_Panics_WhenUpsertIdReturnsError() {
 
 	PersonServer(w, req)
 
-	w.AssertCalled(s.T(), "Write", []byte("This is an error"))
 }
 
 func (s *MainTestSuite) Test_PersonServer_WritesPeople() {
@@ -158,7 +154,6 @@ func (s *MainTestSuite) Test_PersonServer_WritesPeople() {
 
 	PersonServer(w, req)
 
-	w.AssertCalled(s.T(), "Write", []byte("Viktor\nSara"))
 }
 
 func (s *MainTestSuite) Test_PersonServer_Panics_WhenFindReturnsError() {
